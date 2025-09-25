@@ -189,6 +189,7 @@ print(a[mask])
 In NumPy, dot product can be calculate using np.dot or @.
 
 Example:
+```
 A = np.array([[1, 2], [3, 4]])
 B = np.array([[10, 20], [30, 40]])
 
@@ -197,7 +198,7 @@ A @ B
 
 [[ 70 100]
  [150 220]]
-
+```
 
 
 ## 1.5. Reshape & Basic Indexing
@@ -238,16 +239,11 @@ a3 = [[1 2 3 4 5 6 7 8 9]]
 NumPy arrays can be access the elements by using indexing.
 The index is start from 0.
 1D example:
-* Get first element, a[0] 
-  Result = 1
-* Get third element, a[2]
-  Result = 3
-* Get value from index 1-4, a[1:4]
-  Result = [2,3,4]
-* Get first 3, a[:3]
-  Result = [1,2,3]
-* Get from index 3 until end, a[3:]
-  Result = [4,5,6,7,8,9]
+* Get first element, a[0] ->  Result = 1
+* Get third element, a[2] ->  Result = 3
+* Get value from index 1-4, a[1:4] ->  Result = [2,3,4]
+* Get first 3, a[:3] ->  Result = [1,2,3]
+* Get from index 3 until end, a[3:] ->  Result = [4,5,6,7,8,9]
 
 For 2-dim or more, it's same concept with 1-dim.
 The same concept works for higher dimensions (3D, 4D, etc.), just add more indexes separated by commas.
