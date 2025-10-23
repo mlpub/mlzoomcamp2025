@@ -2,13 +2,12 @@
 
 ## Install in Ubuntu 22.04
 
-### Update Ubuntu.
+Update Ubuntu.
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
-### Install uv
 Open terminal and run install script ( copy from https://docs.astral.sh/uv/#highlights ).
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
