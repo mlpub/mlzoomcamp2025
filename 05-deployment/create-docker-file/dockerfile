@@ -1,0 +1,20 @@
+# use base image
+FROM python:3.12-slim
+
+# Set working directory inside the container
+WORKDIR /testapi
+
+# Copy dependency list
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your FastAPI code
+COPY helloworld.py .
+
+# Expose FastAPI port
+EXPOSE 9000
+
+# Command to run helloworld.py
+CMD ["python", "helloworld.py"]
