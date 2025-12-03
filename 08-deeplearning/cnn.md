@@ -171,4 +171,18 @@ CNNs are typically stacked in multiple layers, where the output feature maps of 
 
 
 
+## Out feature maps
+The input image is 3 channel R,G,B.
+Input is CxWxH, 3x5x5.
+With kernel size 3x3, for RGB, the kernel is 3x3x3.
+
+Example: in conv2d, let say input image 10x10, stride=1, padding=0, out_layer=32
+
+ ( (input_size - kernel + (2*padding) ) / stride ) + 1
+output = ((10-3 + 2*0)/1) + 1 = 8
+
+number of feature maps means: it has 32 kernel with size 3x3
+output shape is 32x8x8.
+kernel value start with random and it adjust when training process (back propagation).
+
 
