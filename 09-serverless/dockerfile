@@ -1,0 +1,14 @@
+FROM agrigorev/model-2025-hairstyle:v1
+
+RUN pip install uv
+COPY pyproject.toml .
+COPY uv.lock .
+COPY lambda_function.py .
+
+#RUN uv sync
+RUN uv pip install --target /var/task torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+RUN uv pip install --target /var/task onnx onnxruntime pillow
+
+EXPOSE 8080
+
+CMD ["lambda_function.lambda_handler"]
