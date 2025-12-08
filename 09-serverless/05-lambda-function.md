@@ -2,6 +2,15 @@
 
 ## Create lambda function, lambda_function.py
 ```
+import json
+import io
+import base64
+import numpy as np
+from PIL import Image
+import onnxruntime as ort
+
+IMAGE_SIZE = 200
+
 # load onnx
 session = ort.InferenceSession("hair_classifier_empty.onnx", providers=["CPUExecutionProvider"])
 
@@ -30,7 +39,11 @@ def predict_from_b64(image_base64):
 
 def lambda_handler(event, context):
     # get json body
-    body = json.loads(event["body"]) if "body" in event else event
+    if "body" in event and event["body"]:
+        body = json.loads(event["body"])
+    else:
+        body = event
+
     img_b64 = body["image"]  # input image in base64 format
 
     # call prediction function
